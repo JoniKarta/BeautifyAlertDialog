@@ -1,0 +1,3 @@
+include ':beautify_alert:beautify-alert'
+include ':app'
+rootProject.name = "BeautifyAlertDialog"
