@@ -25,7 +25,7 @@ allprojects {
 Step 2. Add the dependency:
 ```gradle
 dependencies {
-      implementation 'com.github.JoniKarta:BeautifyAlertDialog:1.0.1'
+      implementation 'com.github.JoniKarta:BeautifyAlertDialog:1.0.3'
 }
 ```
 ## Usage
@@ -37,13 +37,13 @@ dependencies {
       .Builder(this)
       .setHeader("Are you root?")
       .setMessageContent("This action required root privileged are you sure you want to proceed")
-      .setLeftButtonText("Leave")
-      .setRightButtonText("Cancel")
+      .setLeftButtonText("Yes")
+      .setRightButtonText("No")
       .setIcon(R.drawable.alert)
       .setImageAnimation(Animator.FADE_IN)
       .setOnConfirmListener(BeautifyCompleteDialog.Builder::dismiss)
       .setOnCancelListener(BeautifyCompleteDialog.Builder::dismiss)
-      .show());
+      .show();
 ```
 
 ###### Basic Success Dialog:
@@ -82,15 +82,38 @@ new BeautifyAlertDialog
                                .setMessageContent("Hope to see you next time!")
                                .setOnSuccessClickListener(builder -> beautifyCompleteDialog.dismiss())
                                .show())
-       .show());
+       .show();
 ```
 
+###### Basic Progress Bar:
+```java
+BeautifyProgressBarDialog.Builder beautifyProgressBarDialog = new BeautifyProgressBarDialog.Builder(this);
+        beautifyProgressBarDialog
+            .setHeader("Loading...")
+            .setMessageContent("All your imaginary data is downloading please wait until we finish")
+            .setOnClickListener(new ProgressBarEventListener() {
+                        @Override
+                        public void onCancel() { beautifyProgressBarDialog.dismiss(); }
+
+                        @Override
+                        public void onComplete(BeautifyCompleteDialog.Builder beautifyCompleteDialog) {
+                            new Thread(() -> {
+                                try {
+                                    Thread.sleep(2000); // Long running task
+                                    beautifyProgressBarDialog.dismiss();
+                                } catch (InterruptedException e) {  e.printStackTrace(); }
+                            }).start();
+                        }
+                    }).show();
+
+```
 
 <div>
-      <img src="Images/Alert.png" alt="flip game image" >
+      <img src="Images/AlertU.png" alt="flip game image" >
       <img src="Images/Success.png" alt="flip game image" >
       <img src="Images/Custom.png" alt="flip game image" >
-      <img src="Images/Custom_next.png" alt="flip game image" >
+      <img src="Images/CustomNo.png" alt="flip game image" >
+      <img src="Images/Progress.png" alt="flip game image" >
 </div>
 
 ## License
@@ -110,5 +133,5 @@ new BeautifyAlertDialog
     limitations under the License.
 
 ## Next Updates:
-- [ ] Progress Bar
+- [X] Progress Bar
 - [ ] New Animations 
