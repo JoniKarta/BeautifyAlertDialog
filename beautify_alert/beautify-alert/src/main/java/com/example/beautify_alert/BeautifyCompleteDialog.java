@@ -14,14 +14,11 @@ import com.example.beautify_alert.controllers.BeautifyCompleteManagerController;
 
 public class BeautifyCompleteDialog extends Dialog {
 
-
     public BeautifyCompleteDialog(@NonNull Context context, Builder builder) {
         super(context);
         setContentView(builder.getView());
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
     }
-
-
 
     public static class Builder {
 
@@ -108,7 +105,7 @@ public class BeautifyCompleteDialog extends Dialog {
          * @param onSuccessClickListener callback for activate user logic
          * @return this Builder object to allow for chaining of calls to set methods
          */
-        public Builder setOnSuccessClickListener(BeautifyOnSuccessClickListener onSuccessClickListener){
+        public Builder setOnSuccessClickListener(BeautifyOnSuccessClickListener onSuccessClickListener) {
             completeController.setOnSuccessClickListener(onSuccessClickListener);
             return this;
         }
@@ -124,7 +121,7 @@ public class BeautifyCompleteDialog extends Dialog {
             return this;
         }
 
-        public Builder setSuccessButtonText(String text){
+        public Builder setSuccessButtonText(String text) {
             completeController.setSuccessButtonText(text);
             return this;
         }
@@ -149,7 +146,6 @@ public class BeautifyCompleteDialog extends Dialog {
         public View getView() {
             return view;
         }
-
 
 
     }

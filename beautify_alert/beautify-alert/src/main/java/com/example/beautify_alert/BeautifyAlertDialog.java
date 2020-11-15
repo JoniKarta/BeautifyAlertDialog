@@ -20,7 +20,6 @@ public class BeautifyAlertDialog extends Dialog {
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
     }
 
-
     public static class Builder {
 
         /**

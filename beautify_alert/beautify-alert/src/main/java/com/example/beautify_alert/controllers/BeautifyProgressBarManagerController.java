@@ -87,26 +87,11 @@ public class BeautifyProgressBarManagerController {
             messageContentEditText.setText(messageContent);
     }
 
-
-//    public void setBarColor(String hexColor) {
-//        // TODO check hex color logic
-//
-//    }
-
     public void setOnClickListener(ProgressBarEventListener eventListener) {
         if (eventListener != null) {
             loadingButton.setOnClickListener(v -> eventListener.onCancel());
         }
     }
 
-
-//    public void setBarBackgroundColor(String[] hexValues) {
-//        GradientDrawable gd = new GradientDrawable(
-//                GradientDrawable.Orientation.TOP_BOTTOM,
-//                new int[]{0xFF616261, 0xFF131313});
-//        gd.setCornerRadius(0f);
-//        //progressBar.getIndeterminateDrawable().setColorFilter(0xFFFF0000, android.graphics.PorterDuff.Mode.MULTIPLY);
-//        progressBar.getIndeterminateDrawable().setColorFilter(gd.getColorFilter());
-//    }
 
 }

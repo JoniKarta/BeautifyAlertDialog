@@ -3,7 +3,6 @@ package com.example.beautify_alert;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -19,7 +18,6 @@ public class BeautifyProgressBarDialog extends Dialog {
         setContentView(builder.getView());
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
     }
-
 
     public static class Builder {
 
@@ -77,15 +75,6 @@ public class BeautifyProgressBarDialog extends Dialog {
             return this;
         }
 
-        /**
-         * 
-         * @param hexValues multiple
-         * @return
-         */
-        public Builder setBarBackgroundColor(String... hexValues){
-            //progressBarController.setBarBackgroundColor(hexValues);
-            return this;
-        }
 
         public Builder setOnClickListener(ProgressBarEventListener eventListener) {
             progressBarController.setOnClickListener(eventListener);
