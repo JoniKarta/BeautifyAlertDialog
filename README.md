@@ -88,8 +88,7 @@ new BeautifyAlertDialog
 ###### Basic Progress Bar:
 ```java
 
-progressBarDialogButton.setOnClickListener(v -> {
-    BeautifyProgressBarDialog.Builder beautifyProgressBarDialog = new BeautifyProgressBarDialog.Builder(this);
+BeautifyProgressBarDialog.Builder beautifyProgressBarDialog = new BeautifyProgressBarDialog.Builder(this);
         beautifyProgressBarDialog
             .setHeader("Loading...")
             .setMessageContent("All your imaginary data is downloading please wait until we finish")
@@ -107,7 +106,6 @@ progressBarDialogButton.setOnClickListener(v -> {
                             }).start();
                         }
                     }).show();
-        });
 
 ```
 
@@ -115,7 +113,7 @@ progressBarDialogButton.setOnClickListener(v -> {
       <img src="Images/Alert.png" alt="flip game image" >
       <img src="Images/Success.png" alt="flip game image" >
       <img src="Images/Custom.png" alt="flip game image" >
-      <img src="Images/Custom_next.png" alt="flip game image" >
+      <img src="Images/CustomNo.png" alt="flip game image" >
       <img src="Images/Progress.png" alt="flip game image" >
 </div>
 
