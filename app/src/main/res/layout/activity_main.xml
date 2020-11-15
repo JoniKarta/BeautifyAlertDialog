@@ -11,7 +11,7 @@
         android:id="@+id/main_activity_alert_header_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Alert Dialog"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -23,7 +23,7 @@
         android:id="@+id/main_activity_success_header_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:text="Success Dialog"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -35,13 +35,25 @@
         android:id="@+id/main_activity_custom_header_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:text="Custom Dialog"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/main_activity_success_dialog_button"
         app:layout_constraintStart_toStartOf="@+id/main_activity_success_dialog_button"
         app:layout_constraintTop_toBottomOf="@+id/main_activity_success_dialog_button" />
+
+    <TextView
+        android:id="@+id/main_activity_progress_bar_header_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Progress Bar Dialog"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/main_activity_custom_dialog_button"
+        app:layout_constraintStart_toStartOf="@+id/main_activity_custom_dialog_button"
+        app:layout_constraintTop_toBottomOf="@+id/main_activity_custom_dialog_button" />
 
     <TextView
         android:id="@+id/activity_main_header"
@@ -88,4 +100,14 @@
         app:layout_constraintEnd_toEndOf="@+id/main_activity_custom_header_text_view"
         app:layout_constraintStart_toStartOf="@+id/main_activity_custom_header_text_view"
         app:layout_constraintTop_toBottomOf="@+id/main_activity_custom_header_text_view" />
+
+    <Button
+        android:id="@+id/main_activity_progress_bar_dialog_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Try Me"
+        app:layout_constraintEnd_toEndOf="@+id/main_activity_progress_bar_header_text_view"
+        app:layout_constraintStart_toStartOf="@+id/main_activity_progress_bar_header_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/main_activity_progress_bar_header_text_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>

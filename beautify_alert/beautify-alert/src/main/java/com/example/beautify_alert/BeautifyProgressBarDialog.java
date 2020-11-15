@@ -78,12 +78,12 @@ public class BeautifyProgressBarDialog extends Dialog {
         }
 
         /**
-         *
-         * @param hexValues multiple colors 
+         * 
+         * @param hexValues multiple
          * @return
          */
         public Builder setBarBackgroundColor(String... hexValues){
-            progressBarController.setBarBackgroundColor(hexValues);
+            //progressBarController.setBarBackgroundColor(hexValues);
             return this;
         }
 
