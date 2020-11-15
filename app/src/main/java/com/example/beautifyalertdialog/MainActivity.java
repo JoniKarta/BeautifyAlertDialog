@@ -44,9 +44,12 @@ public class MainActivity extends AppCompatActivity {
 //                    .setImageAnimation(Animator.ROTATE)
 //                    .show();
 
+            // TODO add new features
             new BeautifyProgressBarDialog.Builder(this)
                     .setBarBackgroundColor()
                     .show();
+
+
         });
 
 
