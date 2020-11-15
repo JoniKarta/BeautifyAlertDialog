@@ -3,6 +3,7 @@ package com.example.beautifyalertdialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -83,16 +84,18 @@ public class MainActivity extends AppCompatActivity {
                     .setMessageContent("All your imaginary data is downloading please wait until we finish")
                     .setOnClickListener(new ProgressBarEventListener() {
                         @Override
-                        public void onCancel() {
-                            beautifyProgressBarDialog.dismiss();
-                        }
+                        public void onCancel() { beautifyProgressBarDialog.dismiss(); }
 
                         @Override
-                        public void onComplete(BeautifyCompleteDialog beautifyCompleteDialog) {
-                            Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+                        public void onComplete(BeautifyCompleteDialog.Builder beautifyCompleteDialog) {
+                            new Thread(() -> {
+                                try {
+                                    Thread.sleep(2000); // Long running task
+                                    beautifyProgressBarDialog.dismiss();
+                                } catch (InterruptedException e) {  e.printStackTrace(); }
+                            }).start();
                         }
-                    })
-                    .show();
+                    }).show();
         });
     }
 

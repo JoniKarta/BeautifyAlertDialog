@@ -6,5 +6,5 @@ public interface ProgressBarEventListener {
 
     void onCancel();
 
-    void onComplete(BeautifyCompleteDialog beautifyCompleteDialog);
+    void onComplete(BeautifyCompleteDialog.Builder beautifyCompleteDialog);
 }

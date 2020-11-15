@@ -27,6 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
+import com.example.beautify_alert.BeautifyCompleteDialog;
 import com.example.beautify_alert.callbacks.ProgressBarEventListener;
 import com.example.beautify_alert.R;
 import com.example.beautify_alert.animation.Animator;
@@ -89,6 +90,7 @@ public class BeautifyProgressBarManagerController {
 
     public void setOnClickListener(ProgressBarEventListener eventListener) {
         if (eventListener != null) {
+            eventListener.onComplete(new BeautifyCompleteDialog.Builder(context));
             loadingButton.setOnClickListener(v -> eventListener.onCancel());
         }
     }
