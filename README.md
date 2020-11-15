@@ -1,6 +1,6 @@
 # Beautify-Alert-Dialog
 
-![JitPack](https://img.shields.io/jitpack/v/github/JoniKarta/BeautifyAlertDialog)
+[![](https://jitpack.io/v/JoniKarta/BeautifyAlertDialog.svg)](https://jitpack.io/#JoniKarta/BeautifyAlertDialog)
 ![GitHub last commit](https://img.shields.io/github/last-commit/JoniKarta/BeautifyAlertDialog?color=%23af6b58)
 ![GitHub repo size](https://img.shields.io/github/repo-size/JoniKarta/BeautifyAlertDialog?color=%23595b83)
 ![GitHub forks](https://img.shields.io/github/forks/JoniKarta/BeautifyAlertDialog?style=social)
@@ -25,7 +25,7 @@ allprojects {
 Step 2. Add the dependency:
 ```gradle
 dependencies {
-      implementation 'com.github.JoniKarta:BeautifyAlertDialog:1.0.1'
+      implementation 'com.github.JoniKarta:BeautifyAlertDialog:1.0.2'
 }
 ```
 ## Usage
@@ -85,12 +85,38 @@ new BeautifyAlertDialog
        .show());
 ```
 
+###### Basic Progress Bar:
+```java
+
+progressBarDialogButton.setOnClickListener(v -> {
+    BeautifyProgressBarDialog.Builder beautifyProgressBarDialog = new BeautifyProgressBarDialog.Builder(this);
+        beautifyProgressBarDialog
+            .setHeader("Loading...")
+            .setMessageContent("All your imaginary data is downloading please wait until we finish")
+            .setOnClickListener(new ProgressBarEventListener() {
+                        @Override
+                        public void onCancel() { beautifyProgressBarDialog.dismiss(); }
+
+                        @Override
+                        public void onComplete(BeautifyCompleteDialog.Builder beautifyCompleteDialog) {
+                            new Thread(() -> {
+                                try {
+                                    Thread.sleep(2000); // Long running task
+                                    beautifyProgressBarDialog.dismiss();
+                                } catch (InterruptedException e) {  e.printStackTrace(); }
+                            }).start();
+                        }
+                    }).show();
+        });
+
+```
 
 <div>
       <img src="Images/Alert.png" alt="flip game image" >
       <img src="Images/Success.png" alt="flip game image" >
       <img src="Images/Custom.png" alt="flip game image" >
       <img src="Images/Custom_next.png" alt="flip game image" >
+      <img src="Images/Progress.png" alt="flip game image" >
 </div>
 
 ## License
@@ -110,5 +136,5 @@ new BeautifyAlertDialog
     limitations under the License.
 
 ## Next Updates:
-- [ ] Progress Bar
+- [X] Progress Bar
 - [ ] New Animations 
