@@ -1,0 +1,61 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:background="@drawable/round_outline">
+
+    <ProgressBar
+        android:id="@+id/beautify_progress_bar_dialog_progress_bar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:indeterminateDrawable="@drawable/circle_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/beautify_progress_bar_message"
+        android:layout_width="255dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:text="All your imaginary data downloaded from your imaginary source"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/beautify_progress_bar_dialog_header_name"
+        app:layout_constraintStart_toStartOf="@+id/beautify_progress_bar_dialog_header_name"
+        app:layout_constraintTop_toBottomOf="@+id/beautify_progress_bar_dialog_header_name" />
+
+
+    <Button
+        android:id="@+id/beautify_progress_bar_dialog_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/success_button_background"
+        android:text="Cancel"
+        app:layout_constraintEnd_toEndOf="@+id/beautify_progress_bar_message"
+        app:layout_constraintStart_toStartOf="@+id/beautify_progress_bar_message"
+        app:layout_constraintTop_toBottomOf="@+id/beautify_progress_bar_message" />
+
+    <TextView
+        android:id="@+id/beautify_progress_bar_dialog_header_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Loading...."
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/beautify_progress_bar_dialog_progress_bar"
+        app:layout_constraintStart_toStartOf="@+id/beautify_progress_bar_dialog_progress_bar"
+        app:layout_constraintTop_toBottomOf="@+id/beautify_progress_bar_dialog_progress_bar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

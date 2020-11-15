@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:id="@+id/main_layout"
+    android:background="@drawable/round_outline">
+
+
+    <TextView
+        android:id="@+id/beautify_alert_dialog_message"
+        android:layout_width="255dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Something went wrong.... please try again"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/beautify_alert_dialog_right_button"
+        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintStart_toStartOf="@+id/beautify_alert_dialog_left_button"
+        app:layout_constraintTop_toBottomOf="@+id/beautify_alert_dialog_header_name" />
+
+    <Button
+        android:id="@+id/beautify_alert_dialog_left_button"
+        android:backgroundTint="@color/alert_button_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:text="OK"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beautify_alert_dialog_message" />
+
+    <Button
+        android:id="@+id/beautify_alert_dialog_right_button"
+        android:backgroundTint="@color/alert_button_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beautify_alert_dialog_message" />
+
+    <ImageView
+        android:id="@+id/beautify_alert_dialog_alert_icon"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/alert"
+        tools:ignore="VectorDrawableCompat"
+        tools:srcCompat="@drawable/alert" />
+
+    <TextView
+        android:id="@+id/beautify_alert_dialog_header_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Are you sure?"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beautify_alert_dialog_alert_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    beautify_alert_dialog_message-->
+<!--    android:id="@+id/beautify_alert_dialog_alert_icon"-->
+
+    <!--    beautify_alert_dialog_message-->
+    <!--    android:id="@+id/beautify_alert_dialog_alert_icon"-->
+
+
+    <!--    <?xml version="1.0" encoding="utf-8"?>-->
+    <!--<LinearLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="300dp"-->
+    <!--android:layout_height="300dp"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:orientation="vertical"-->
+    <!--android:id="@+id/main_layout"-->
+    <!--android:background="@color/purple_200">-->
+
+
+
+    <!--<ImageView-->
+    <!--    android:id="@+id/beautify_alert_dialog_alert_icon"-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_marginTop="20dp"-->
+    <!--    android:layout_gravity="center"-->
+    <!--    tools:srcCompat="@drawable/ic_launcher_foreground" />-->
+
+    <!--<TextView-->
+    <!--    android:id="@+id/beautify_alert_dialog_message"-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_gravity="center"-->
+    <!--    android:text="TextView"-->
+    <!--    />-->
+
+    <!--<LinearLayout-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    android:layout_margin="10dp"-->
+    <!--    >-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/beautify_alert_dialog_left_button"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:text="OK"/>-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/beautify_alert_dialog_right_button"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:text="Cancel"/>-->
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+
+    <!--    &lt;!&ndash;    beautify_alert_dialog_message&ndash;&gt;-->
+    <!--    &lt;!&ndash;    android:id="@+id/beautify_alert_dialog_alert_icon"&ndash;&gt;-->
