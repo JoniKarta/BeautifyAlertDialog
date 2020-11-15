@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                                 .show())
                 .setOnCancelListener(beautifyCompleteDialog -> beautifyCompleteDialog
                         .setIcon(R.drawable.sad)
+                        .setHeader("Tickets are out")
                         .setMessageContent("Hope to see you next time!")
                         .setOnSuccessClickListener(builder -> beautifyCompleteDialog.dismiss())
                         .show())
