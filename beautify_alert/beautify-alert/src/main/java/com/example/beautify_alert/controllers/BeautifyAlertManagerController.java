@@ -19,7 +19,6 @@ import com.example.beautify_alert.BeautifyCompleteDialog;
 import com.example.beautify_alert.animation.IAnimation;
 import com.example.beautify_alert.callbacks.BeautifyOnAlertClickListener;
 import com.example.beautify_alert.R;
-import com.example.beautify_alert.animation.Animator;
 import com.example.beautify_alert.animation.AnimatorFactory;
 import com.example.beautify_alert.exceptions.IllegalNameException;
 
@@ -41,8 +40,6 @@ public final class BeautifyAlertManagerController {
     private TextView messageContentEditText;
 
     private IAnimation iAnimation;
-
-    private boolean isAnimateUrl = false;
 
     public BeautifyAlertManagerController(Context context, View view) {
         this.context = context;
@@ -94,8 +91,20 @@ public final class BeautifyAlertManagerController {
      * @param drawable drawable resource
      */
     public void setIcon(int drawable) {
-        Glide.with(view).load(drawable).circleCrop().into(iconImage);
-        isAnimateUrl = false;
+        Glide.with(view).load(drawable).listener(new RequestListener<Drawable>() {
+            @Override
+            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                return false;
+            }
+
+            @Override
+            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                if(iAnimation != null){
+                    iAnimation.animate(iconImage);
+                }
+                return false;
+            }
+        }).circleCrop().into(iconImage);
     }
 
     /**
@@ -105,23 +114,23 @@ public final class BeautifyAlertManagerController {
      * @param url path to the given image
      */
     public void setIcon(String url) {
-        isAnimateUrl = true;
-        Glide.with(view).load(url).
-                listener(new RequestListener<Drawable>() {
-                    @Override
-                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                        return false;
-                    }
+        Glide.with(view).load(url).listener(new RequestListener<Drawable>() {
+            @Override
+            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                return false;
+            }
 
-                    @Override
-                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                        if(iAnimation != null){
-                            iAnimation.animate(iconImage);
-                        }
-                        return false;
-                    }
-                }).circleCrop().into(iconImage);
+            @Override
+            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                if(iAnimation != null){
+                    iAnimation.animate(iconImage);
+                }
+                return false;
+            }
+        }).circleCrop().into(iconImage);
     }
+
+
 
     /**
      * This method let the user to register to a new click event on the left button
@@ -184,9 +193,12 @@ public final class BeautifyAlertManagerController {
      */
     public void setAnimationType(String animatorType) {
          iAnimation = AnimatorFactory.activate(animatorType);
-         if(iAnimation != null && !isAnimateUrl){
-             iAnimation.animate(iconImage);
-         }
     }
 
 }
+
+
+
+// A - implement interface 
+
+// B - has instance of the interface and create someone the register to him

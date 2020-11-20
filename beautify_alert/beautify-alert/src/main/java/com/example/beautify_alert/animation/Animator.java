@@ -11,5 +11,5 @@ public interface Animator {
 
     String FLIP_FLOP = "FLIP_FLOP";
 
-
+    String DISABLE = "DISABLE";
 }

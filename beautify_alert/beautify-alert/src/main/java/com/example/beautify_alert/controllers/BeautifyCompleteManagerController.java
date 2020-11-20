@@ -85,7 +85,19 @@ public class BeautifyCompleteManagerController {
      * @param drawable drawable resource
      */
     public void setIcon(int drawable) {
-        Glide.with(view).load(drawable).circleCrop().into(iconImage);
+        Glide.with(view).load(drawable).listener(new RequestListener<Drawable>() {
+            @Override
+            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                return false;
+            }
+
+            @Override
+            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                if (iAnimation != null)
+                    iAnimation.animate(iconImage);
+                return false;
+            }
+        }).circleCrop().into(iconImage);
     }
 
     /**

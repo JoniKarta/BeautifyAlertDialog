@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 .setMessageContent("This action required root privileged are you sure you want to proceed")
                 .setLeftButtonText("Yes")
                 .setRightButtonText("No")
-                .setIcon("https://cdn.pixabay.com/photo/2016/11/03/18/19/social-media-1795578_960_720.jpg")
                 .setImageAnimation(Animator.FLIP_FLOP)
+                .setIcon("https://cdn.pixabay.com/photo/2014/10/26/14/36/light-bulb-503881_960_720.jpg")
                 .setOnConfirmListener(BeautifyCompleteDialog.Builder::dismiss)
                 .setOnCancelListener(BeautifyCompleteDialog.Builder::dismiss)
                 .show());
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
             BeautifyCompleteDialog.Builder dialog = new BeautifyCompleteDialog.Builder(this);
             dialog.setHeader("Saved successfully")
                     .setMessageContent("All you data saved successfully")
+                    .setImageAnimation(Animator.ROTATE)
                     .setIcon(R.drawable.success)
                     .setOnSuccessClickListener(builder -> dialog.dismiss())
-                    .setImageAnimation(Animator.ROTATE)
                     .show();
 
         });
@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 .setMessageContent("Would you like to buy the ticket?")
                 .setLeftButtonText("Yes")
                 .setRightButtonText("No")
-                .setIcon(R.drawable.tickets)
                 .setImageAnimation(Animator.FADE_IN)
+                .setIcon(R.drawable.tickets)
                 .setOnConfirmListener(beautifyCompleteDialog ->
                         beautifyCompleteDialog
                                 .setIcon(R.drawable.success)
@@ -85,7 +85,9 @@ public class MainActivity extends AppCompatActivity {
                     .setMessageContent("All your imaginary data is downloading please wait until we finish")
                     .setOnClickListener(new ProgressBarEventListener() {
                         @Override
-                        public void onCancel() { beautifyProgressBarDialog.dismiss(); }
+                        public void onCancel() {
+                            beautifyProgressBarDialog.dismiss();
+                        }
 
                         @Override
                         public void onComplete(BeautifyCompleteDialog.Builder beautifyCompleteDialog) {
@@ -93,7 +95,9 @@ public class MainActivity extends AppCompatActivity {
                                 try {
                                     Thread.sleep(2000); // Long running task
                                     beautifyProgressBarDialog.dismiss();
-                                } catch (InterruptedException e) {  e.printStackTrace(); }
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                             }).start();
                         }
                     }).show();
