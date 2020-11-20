@@ -25,7 +25,7 @@ allprojects {
 Step 2. Add the dependency:
 ```gradle
 dependencies {
-      implementation 'com.github.JoniKarta:BeautifyAlertDialog:1.0.3'
+      implementation 'com.github.JoniKarta:BeautifyAlertDialog:1.0.4'
 }
 ```
 ## Usage
@@ -89,27 +89,26 @@ new BeautifyAlertDialog
 ```java
 
  BeautifyProgressBarDialog.Builder beautifyProgressBarDialog = new BeautifyProgressBarDialog.Builder(this);
-            beautifyProgressBarDialog
-                    .setHeader("Loading...")
-                    .setMessageContent("All your imaginary data is downloading please wait until we finish")
-                    .setOnClickListener(new ProgressBarEventListener() {
-                        @Override
-                        public void onCancel() {
-                            beautifyProgressBarDialog.dismiss();
-                        }
+ beautifyProgressBarDialog
+    .setHeader("Loading...")
+    .setMessageContent("All your imaginary data is downloading please wait until we finish")
+    .setOnClickListener(new ProgressBarEventListener() {
+          @Override
+          public void onCancel() {
+               beautifyProgressBarDialog.dismiss();
+          }
 
-                        @Override
-                        public void onComplete(BeautifyCompleteDialog.Builder beautifyCompleteDialog) {
-                            new Thread(() -> {
-                                try {
-                                    Thread.sleep(2000); // Long running task
-                                    beautifyProgressBarDialog.dismiss();
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                            }).start();
-                        }
-                    }).show();
+          @Override
+          public void onComplete(BeautifyCompleteDialog.Builder beautifyCompleteDialog) {
+                 new Thread(() -> {
+                      try {
+                         Thread.sleep(2000); // Long running task
+                         beautifyProgressBarDialog.dismiss();
+                      } catch (InterruptedException e) {
+                         e.printStackTrace();
+                      }}).start();
+                 }
+    }).show();
 ```
 
 
