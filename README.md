@@ -39,8 +39,8 @@ dependencies {
       .setMessageContent("This action required root privileged are you sure you want to proceed")
       .setLeftButtonText("Yes")
       .setRightButtonText("No")
-      .setIcon(R.drawable.alert)
-      .setImageAnimation(Animator.FADE_IN)
+      .setImageAnimation(Animator.FLIP_FLOP)
+      .setIcon("https://cdn.pixabay.com/photo/2014/10/26/14/36/light-bulb-503881_960_720.jpg")
       .setOnConfirmListener(BeautifyCompleteDialog.Builder::dismiss)
       .setOnCancelListener(BeautifyCompleteDialog.Builder::dismiss)
       .show();
@@ -50,50 +50,52 @@ dependencies {
 ```java
 
 BeautifyCompleteDialog.Builder dialog = new BeautifyCompleteDialog.Builder(this);
-  dialog.setHeader("Saved successfully")
-      .setMessageContent("All you data saved successfully")
-      .setIcon(R.drawable.success)
-      .setOnSuccessClickListener(builder -> dialog.dismiss())
-      .setImageAnimation(Animator.ROTATE)
-      .show();
-                    
+dialog.setHeader("Saved successfully")
+     .setMessageContent("All you data saved successfully")
+     .setImageAnimation(Animator.ROTATE)
+     .setIcon(R.drawable.success)
+     .setOnSuccessClickListener(builder -> dialog.dismiss())
+     .show();                 
 ```
 
-###### Basic Custom Dialog With Inner Dialog
+###### Basic Custom Dialog With Inners Dialogs
 ```java                    
 
 new BeautifyAlertDialog
-      .Builder(this)
-      .setHeader("Ticket Purchase")
-      .setMessageContent("Would you like to buy the ticket?")
-      .setLeftButtonText("Yes")
-      .setRightButtonText("No")
-      .setIcon(R.drawable.tickets)
-      .setImageAnimation(Animator.FADE_IN)
-      .setOnConfirmListener(beautifyCompleteDialog ->
-                            beautifyCompleteDialog
-                              .setIcon(R.drawable.success)
-                              .setMessageContent("Thanks see you there!")
-                              .setOnSuccessClickListener(builder -> beautifyCompleteDialog.dismiss())
-                              .show())
-      .setOnCancelListener(beautifyCompleteDialog -> 
-                            beautifyCompleteDialog
-                               .setIcon(R.drawable.sad)
-                               .setMessageContent("Hope to see you next time!")
-                               .setOnSuccessClickListener(builder -> beautifyCompleteDialog.dismiss())
-                               .show())
-       .show();
+    .Builder(this)
+    .setHeader("Ticket Purchase")
+    .setMessageContent("Would you like to buy the ticket?")
+    .setLeftButtonText("Yes")
+    .setRightButtonText("No")
+    .setImageAnimation(Animator.FADE_IN)
+    .setIcon(R.drawable.tickets)
+    .setOnConfirmListener(beautifyCompleteDialog ->
+           beautifyCompleteDialog
+               .setIcon(R.drawable.success)
+               .setMessageContent("Thanks see you there!")
+               .setOnSuccessClickListener(builder -> beautifyCompleteDialog.dismiss())
+               .show())
+    .setOnCancelListener(beautifyCompleteDialog -> beautifyCompleteDialog
+               .setIcon(R.drawable.sad)
+               .setHeader("Tickets are out")
+               .setMessageContent("Hope to see you next time!")
+               .setOnSuccessClickListener(builder -> beautifyCompleteDialog.dismiss())
+               .show())
+    .show();
 ```
 
 ###### Basic Progress Bar:
 ```java
-BeautifyProgressBarDialog.Builder beautifyProgressBarDialog = new BeautifyProgressBarDialog.Builder(this);
-        beautifyProgressBarDialog
-            .setHeader("Loading...")
-            .setMessageContent("All your imaginary data is downloading please wait until we finish")
-            .setOnClickListener(new ProgressBarEventListener() {
+
+ BeautifyProgressBarDialog.Builder beautifyProgressBarDialog = new BeautifyProgressBarDialog.Builder(this);
+            beautifyProgressBarDialog
+                    .setHeader("Loading...")
+                    .setMessageContent("All your imaginary data is downloading please wait until we finish")
+                    .setOnClickListener(new ProgressBarEventListener() {
                         @Override
-                        public void onCancel() { beautifyProgressBarDialog.dismiss(); }
+                        public void onCancel() {
+                            beautifyProgressBarDialog.dismiss();
+                        }
 
                         @Override
                         public void onComplete(BeautifyCompleteDialog.Builder beautifyCompleteDialog) {
@@ -101,11 +103,12 @@ BeautifyProgressBarDialog.Builder beautifyProgressBarDialog = new BeautifyProgre
                                 try {
                                     Thread.sleep(2000); // Long running task
                                     beautifyProgressBarDialog.dismiss();
-                                } catch (InterruptedException e) {  e.printStackTrace(); }
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                             }).start();
                         }
                     }).show();
-
 ```
 
 <div>
@@ -134,4 +137,4 @@ BeautifyProgressBarDialog.Builder beautifyProgressBarDialog = new BeautifyProgre
 
 ## Next Updates:
 - [X] Progress Bar
-- [ ] New Animations 
+- [X] New Animations 
