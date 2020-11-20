@@ -1,14 +1,22 @@
 package com.example.beautify_alert.controllers;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.example.beautify_alert.BeautifyAlertDialog;
 import com.example.beautify_alert.BeautifyCompleteDialog;
+import com.example.beautify_alert.animation.IAnimation;
 import com.example.beautify_alert.callbacks.BeautifyOnAlertClickListener;
 import com.example.beautify_alert.R;
 import com.example.beautify_alert.animation.Animator;
@@ -31,6 +39,10 @@ public final class BeautifyAlertManagerController {
     private TextView headerNameEditText;
 
     private TextView messageContentEditText;
+
+    private IAnimation iAnimation;
+
+    private boolean isAnimateUrl = false;
 
     public BeautifyAlertManagerController(Context context, View view) {
         this.context = context;
@@ -83,6 +95,7 @@ public final class BeautifyAlertManagerController {
      */
     public void setIcon(int drawable) {
         Glide.with(view).load(drawable).circleCrop().into(iconImage);
+        isAnimateUrl = false;
     }
 
     /**
@@ -92,7 +105,22 @@ public final class BeautifyAlertManagerController {
      * @param url path to the given image
      */
     public void setIcon(String url) {
-        Glide.with(view).load(url).circleCrop().into(iconImage);
+        isAnimateUrl = true;
+        Glide.with(view).load(url).
+                listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        if(iAnimation != null){
+                            iAnimation.animate(iconImage);
+                        }
+                        return false;
+                    }
+                }).circleCrop().into(iconImage);
     }
 
     /**
@@ -155,9 +183,10 @@ public final class BeautifyAlertManagerController {
      * @param animatorType set the relevant name of the animation
      */
     public void setAnimationType(String animatorType) {
-        Animator animator = AnimatorFactory.activate(animatorType);
-        if (animator != null)
-            animator.animate(iconImage);
+         iAnimation = AnimatorFactory.activate(animatorType);
+         if(iAnimation != null && !isAnimateUrl){
+             iAnimation.animate(iconImage);
+         }
     }
 
 }

@@ -4,7 +4,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
-public class FadeIn implements Animator {
+public class FadeIn implements IAnimation {
 
 
     @Override

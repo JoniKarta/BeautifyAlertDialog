@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 .setMessageContent("This action required root privileged are you sure you want to proceed")
                 .setLeftButtonText("Yes")
                 .setRightButtonText("No")
-                .setIcon(R.drawable.alert)
-                .setImageAnimation(Animator.FADE_IN)
+                .setIcon("https://cdn.pixabay.com/photo/2016/11/03/18/19/social-media-1795578_960_720.jpg")
+                .setImageAnimation(Animator.FLIP_FLOP)
                 .setOnConfirmListener(BeautifyCompleteDialog.Builder::dismiss)
                 .setOnCancelListener(BeautifyCompleteDialog.Builder::dismiss)
                 .show());

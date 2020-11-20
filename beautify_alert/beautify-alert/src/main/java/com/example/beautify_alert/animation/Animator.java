@@ -4,11 +4,12 @@ import android.widget.ImageView;
 
 public interface Animator {
 
-    void animate(ImageView imageView);
 
     String ROTATE = "ROTATE";
 
     String FADE_IN = "FADE_IN";
+
+    String FLIP_FLOP = "FLIP_FLOP";
 
 
 }

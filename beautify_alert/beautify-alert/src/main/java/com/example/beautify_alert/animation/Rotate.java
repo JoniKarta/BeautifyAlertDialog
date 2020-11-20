@@ -4,7 +4,7 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
-public class Rotate implements Animator {
+public class Rotate implements IAnimation {
 
     @Override
     public void animate(ImageView imageView) {

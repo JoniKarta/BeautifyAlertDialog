@@ -2,14 +2,15 @@ package com.example.beautify_alert.animation;
 
 public final class AnimatorFactory {
 
-   private Animator animator;
+   public static IAnimation activate(String animation){
 
-   public static Animator activate(String animation){
-
-       if(animation.equals(Animator.FADE_IN)){
-           return new FadeIn();
-       }else if(animation.equals(Animator.ROTATE)){
-           return new Rotate();
+       switch (animation) {
+           case Animator.FADE_IN:
+               return new FadeIn();
+           case Animator.ROTATE:
+               return new Rotate();
+           case Animator.FLIP_FLOP:
+               return new FlipFlop();
        }
        return null;
    }
