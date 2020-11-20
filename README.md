@@ -32,6 +32,8 @@ dependencies {
 ![](Images/BeautifyDialog.gif)
 
 ###### Basic Alert Dialog:
+Dont' forget to add internet permissions in your manifest for download images from a given url!
+
 ```java
 
  new BeautifyAlertDialog
