@@ -6,12 +6,12 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/JoniKarta/BeautifyAlertDialog)
 ![GitHub forks](https://img.shields.io/github/forks/JoniKarta/BeautifyAlertDialog?style=social)
 
-Library for creating custom alert dialog which offers an adaptive UI support. 
-It’s functionality is almost similar to the native AlertDialog.
-Flexible and easy control over multiple part of the layout such as icon, buttons, messages and color such that you could  
-customize the ui with multiple pre-built features.
-The library also include animation for icons.
-
+Library for creating custom dialog which offers an adaptive UI support. 
+It’s functionality is almost similar to the native AlertDialog but more fancy UI and with pre-build features.<br>
+It has a Flexible and easy control over multiple part of the layout 
+such as icon, buttons, messages and color such that you could customize the ui in a easy manner way.<br>
+The library also include animation for images and supports downloading image from a given url.<br>
+Enjoy!
 
 ## Setup
 Step 1. Add it in your root build.gradle at the end of repositories:
