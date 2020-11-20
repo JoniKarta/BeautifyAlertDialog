@@ -29,6 +29,7 @@ dependencies {
 }
 ```
 ## Usage
+![](Images/BeautifyDialog.gif)
 
 ###### Basic Alert Dialog:
 ```java
@@ -111,13 +112,6 @@ new BeautifyAlertDialog
                     }).show();
 ```
 
-<div>
-      <img src="Images/AlertU.png" alt="flip game image" >
-      <img src="Images/Success.png" alt="flip game image" >
-      <img src="Images/Custom.png" alt="flip game image" >
-      <img src="Images/CustomNo.png" alt="flip game image" >
-      <img src="Images/Progress.png" alt="flip game image" >
-</div>
 
 ## License
 
