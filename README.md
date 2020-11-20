@@ -3,6 +3,7 @@
 ![JitPack](https://img.shields.io/jitpack/v/github/JoniKarta/BeautifyAlertDialog)
 ![GitHub last commit](https://img.shields.io/github/last-commit/JoniKarta/BeautifyAlertDialog?color=%23af6b58)
 ![GitHub repo size](https://img.shields.io/github/repo-size/JoniKarta/BeautifyAlertDialog?color=%23595b83)
+![GitHub Repo stars](https://img.shields.io/github/stars/JoniKarta/BeautifyAlertDialog)
 ![GitHub forks](https://img.shields.io/github/forks/JoniKarta/BeautifyAlertDialog?style=social)
 
 Library for creating custom alert dialog which offers an adaptive UI support. 
